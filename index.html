@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    <script type="module" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Start din dag produktivt og begynd din to-do liste! &#9996</h1>
+        <div class="day_container">
+            <p>Det er i dag:</p>
+            <strong id="demo"></strong>
+        </div>
+        <div class="input-field">
+            <input type="text" id="task" placeholder="Tilføj dine to-do's..">
+            <button class="add">Tilføj</button>
+        </div>
+        <div class="grid">
+            <div class="todo_container">
+                <div class="flex">
+                    <h2 class="to_do">Dagens opgaver</h2>
+                    <!-- <img src="/svg/choices.svg" alt="mine valg ikon"> -->
+                </div>
+                <ul id="to_do_list_container">
+                    <!-- <li></li> -->
+                </ul>
+            </div>
+            <div class="done_container">
+                <h2 id="done">Opgaver klaret &#128170</h2>
+                <ul id="done_list_container">
+                    <!-- <li></li> -->
+                </ul>
+            </div>
+        </div>
+        <div class="grid_1">
+            <div></div>
+            <div>
+                <button id="remove_all">Fjern alle klaret opgaver</button>
+            </div>
+        </div>
+        <div class="grid_2">
+            <div></div>
+            <div>
+                <img src="/svg/computer.svg" alt="computer">
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fluid-34-48: clamp(2.125rem, 1.8207rem + 1.5217vw, 3rem);
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  padding: 1rem;
+  color: rgb(77, 77, 77);
+}
+
+main {
+  margin-inline: auto;
+  padding: 1rem;
+}
+h1 {
+  font-size: var(--fluid-34-48);
+  padding-bottom: 1rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  place-items: end;
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem 0 1rem;
+  max-width: 400px;
+}
+
+input {
+  flex: 1;
+  outline: none;
+  border: 1px lightgrey solid;
+  border-radius: 25px;
+  font-size: 14px;
+  padding: 0.7rem 2rem 0.7rem 1rem;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: #a9def9;
+  padding: 0.7rem 1rem;
+  border-radius: 25px;
+}
+
+.day_container {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  border-radius: 10px;
+  background: #e4c1f9;
+  width: fit-content;
+}
+
+ul li {
+  list-style: none;
+  /* display: flex;
+  justify-content: space-around; */
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 1fr;
+  gap: 1rem;
+  padding-top: 0.9rem;
+  max-width: 400px;
+
+  & :last-child {
+    justify-self: end;
+  }
+}
+
+ul li {
+  cursor: pointer;
+}
+
+ul li span {
+  cursor: pointer;
+}
+
+.todo_container,
+.done_container {
+  padding-block: 1rem;
+}
+
+ul#to_do_list_container li::before {
+  grid-column: 1;
+  grid-row: 1;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("/svg/circle.svg");
+  background-size: cover;
+}
+
+ul#done_list_container li::after {
+  grid-column: 1;
+  grid-row: 1;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("/svg/checked.svg");
+  background-size: cover;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.grid_1 {
+  padding-block: 1rem;
+}
+
+.grid_2 {
+  display: grid;
+  justify-items: center;
+}
+
+img {
+  padding-top: 3rem;
+}
+
+@media (min-width: 700px) {
+  main {
+    max-width: 1000px;
+  }
+
+  #remove_all {
+    width: fit-content;
+  }
+
+  .grid,
+  .grid_1,
+  .grid_2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid_1,
+  .grid_2 {
+    place-items: end;
+  }
+}
