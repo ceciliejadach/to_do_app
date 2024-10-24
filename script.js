@@ -18,6 +18,7 @@ document.getElementById("demo").innerHTML = day;
 
 //Lav array (det skal være tomt fra starten)
 let taskArray = [];
+let doneTaskArray = [];
 
 //Gem taskArray i localstorage
 if (taskArrayFromLocalstorage === null) {
@@ -31,6 +32,7 @@ init();
 
 function init() {
   updateTaskView();
+  //updateDoneTaskView();
 }
 
 //Ved klik af tilføj knappen tilføjes task til array
@@ -65,7 +67,6 @@ function updateTaskView() {
 
   taskArray.forEach((task, id) => {
     let li = document.createElement("li");
-
     li.innerHTML = `<span class="taskname" data-id="${id}"> ${task}</span> <span class="delete" data-id="${id}">&#128465</span>`; //tasks får specifikt ID
     toDoList.appendChild(li); //tilføj li element
   });
@@ -87,30 +88,33 @@ function updateTaskView() {
 function markAsDone(event) {
   let completedTask = event.target.innerText;
   let taskId = event.target.dataset.id;
+  // let completedTask = taskArray[taskId];
   let li = document.createElement("li");
 
-  // li.innerHTML = `<span class="strike">${completedTask}</span> <span class="delete">&#128465</span>`;
+  // doneTaskArray.push(completedTask);
   li.innerHTML = completedTask;
   li.classList.add("strike"); //tilføj klassen strike til task, når den er markeret som done
   console.log("task er done");
 
-  doneList.appendChild(li); //Opret et nyt <li> element i done-listen
   li.addEventListener("click", markAsNotDone); // Tilføj eventlistener til task for at kunne flytte den tilbage til to-do-listen
+  doneList.appendChild(li); //Opret et nyt <li> element i done-listen
   taskArray.splice(taskId, 1); //Fjern opgaven fra taskArray
 
-  updateTaskView(); //opdater visningen af to-do-listen
-  updateLocalStorage();
+  updateTaskView(); // Opdater to-do listen
+  updateLocalStorage(); // Opdater localStorage
 }
 
 //Flyt task tilbage til to-do-listen
 function markAsNotDone(event) {
   let taskToMoveBack = event.target.innerText;
-  taskArray.push(taskToMoveBack); //skub task tilbage til taskArray
-  event.target.remove(); //Fjern opgaven fra done-listen
+
+  taskArray.push(taskToMoveBack);
+
+  event.target.remove();
   console.log("Task bliver flyttet tilbage til to-do listen");
 
-  updateTaskView(); //Opdater to-do-listen
-  updateLocalStorage(); //Opdater localStorage efter ændringer
+  updateTaskView();
+  updateLocalStorage();
 }
 
 //Funktion til at slette en opgave
@@ -123,7 +127,7 @@ function deleteTask(event) {
 }
 
 //Knap til at fjerne alt indhold i done listen
-removeAllTasksBtn.addEventListener("click", function (e) {
+removeAllTasksBtn.addEventListener("click", function () {
   doneList.innerHTML = "";
 });
 
