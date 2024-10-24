@@ -11,16 +11,16 @@
 
 <body>
     <main>
-        <h1>Start din dag produktivt og begynd din to-do liste! &#9996</h1>
+        <h1>Start din dag produktivt og begynd din to-do liste!</h1>
         <div class="day_container">
             <p>Det er i dag:</p>
-            <strong id="demo"></strong>
-        </div>
-        <div class="input-field">
-            <input type="text" id="task" placeholder="Tilføj dine to-do's..">
-            <button class="add">Tilføj</button>
+            <strong id="day"></strong>
         </div>
         <div class="grid">
+            <div class="input-field">
+                <input type="text" id="task" placeholder="Tilføj dine to-do's..">
+                <button class="add">Tilføj</button>
+            </div>
             <div class="todo_container">
                 <div class="flex">
                     <h2 class="to_do">Dagens opgaver</h2>
@@ -30,7 +30,7 @@
                 </ul>
             </div>
             <div class="done_container">
-                <h2 id="done">Opgaver klaret &#128170</h2>
+                <h2 id="done">Opgaver klaret</h2>
                 <ul id="done_list_container">
                     <!-- <li></li> -->
                 </ul>
@@ -42,12 +42,12 @@
                 <button id="remove_all">Fjern alle klaret opgaver</button>
             </div>
         </div>
-        <!-- <div class="grid_2">
+        <div class="grid_2">
             <div></div>
             <div>
                 <img src="/svg/computer.svg" alt="computer">
             </div>
-        </div> -->
+        </div>
     </main>
 </body>
 

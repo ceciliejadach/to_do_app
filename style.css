@@ -6,21 +6,33 @@
 
 :root {
   --fluid-34-48: clamp(2.125rem, 1.8207rem + 1.5217vw, 3rem);
+  --fluid-20-32: clamp(1.25rem, 0.9891rem + 1.3043vw, 2rem);
+
+  --text-color: rgb(77, 77, 77);
+  --green: #d0f4de;
+  --container-blue-bg: #a9def986;
 }
 
 body {
   font-family: "poppins", sans-serif;
   padding: 1rem;
-  color: rgb(77, 77, 77);
+  color: var(--text-color);
 }
 
 main {
   margin-inline: auto;
   padding: 1rem;
 }
+
 h1 {
   font-size: var(--fluid-34-48);
   padding-bottom: 1rem;
+  max-width: 600px;
+  padding-bottom: 2rem;
+}
+
+h2 {
+  font-size: var(--fluid-20-32);
 }
 
 .flex {
@@ -49,9 +61,10 @@ input {
 button {
   border: none;
   outline: none;
-  background: #a9def9;
+  background: var(--green);
   padding: 0.7rem 1rem;
   border-radius: 25px;
+  color: var(--text-color);
 }
 
 .day_container {
@@ -87,7 +100,9 @@ ul li span {
 
 .todo_container,
 .done_container {
-  padding-block: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background: var(--container-blue-bg);
 }
 
 ul#to_do_list_container li::before {
@@ -114,8 +129,16 @@ ul#done_list_container li::after {
   text-decoration: line-through;
 }
 
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
 .grid_1 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   padding-block: 1rem;
+  place-items: end;
 }
 
 .grid_2 {
@@ -125,6 +148,7 @@ ul#done_list_container li::after {
 
 img {
   padding-top: 3rem;
+  opacity: 50%;
 }
 
 @media (min-width: 700px) {
@@ -137,14 +161,22 @@ img {
   }
 
   .grid,
-  .grid_1,
   .grid_2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  .grid_1,
   .grid_2 {
-    place-items: center;
+    place-items: end;
+  }
+
+  .todo_container {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .done_container {
+    grid-column: 2;
+    grid-row: 2;
   }
 }

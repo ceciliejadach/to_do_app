@@ -14,7 +14,7 @@ const weekday = ["Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", 
 
 const d = new Date();
 let day = weekday[d.getDay()];
-document.getElementById("demo").innerHTML = day;
+document.getElementById("day").innerHTML = day;
 
 //Lav array (det skal være tomt fra starten)
 let taskArray = [];
