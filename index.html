@@ -9,12 +9,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body data-theme="light">
     <main>
         <h1>Start din dag produktivt og begynd din to-do liste!</h1>
-        <div class="day_container">
-            <p>Det er i dag:</p>
-            <strong id="day"></strong>
+        <div class="flex">
+            <div class="day_container">
+                <p>Det er i dag:</p>
+                <strong id="day"></strong>
+            </div>
+            <div>
+                <label for="theme-switcher">
+                    <select class="theme-switcher" id="theme-switcher">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </label>
+            </div>
         </div>
         <div class="grid">
             <div class="input-field">
@@ -22,7 +32,7 @@
                 <button class="add">Tilføj</button>
             </div>
             <div class="todo_container">
-                <div class="flex">
+                <div>
                     <h2 class="to_do">Dagens opgaver</h2>
                 </div>
                 <ul id="to_do_list_container">

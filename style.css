@@ -7,16 +7,31 @@
 :root {
   --fluid-34-48: clamp(2.125rem, 1.8207rem + 1.5217vw, 3rem);
   --fluid-20-32: clamp(1.25rem, 0.9891rem + 1.3043vw, 2rem);
+}
 
+[data-theme="light"] {
+  --bg-color: white;
   --text-color: rgb(77, 77, 77);
   --green: #d0f4de;
   --container-blue-bg: #a9def986;
+  --purple: #e4c1f9;
+  --btn-color: rgb(77, 77, 77);
+}
+
+[data-theme="dark"] {
+  --bg-color: #252422;
+  --text-color: white;
+  --green: #d0f4de;
+  --container-blue-bg: #403d39;
+  --purple: #e4c1f9;
+  --btn-color: rgb(77, 77, 77);
 }
 
 body {
   font-family: "poppins", sans-serif;
   padding: 1rem;
   color: var(--text-color);
+  background: var(--bg-color);
 }
 
 main {
@@ -38,7 +53,7 @@ h2 {
 .flex {
   display: flex;
   justify-content: space-between;
-  place-items: end;
+  place-items: center;
 }
 
 .input-field {
@@ -64,7 +79,7 @@ button {
   background: var(--green);
   padding: 0.7rem 1rem;
   border-radius: 25px;
-  color: var(--text-color);
+  color: var(--btn-color);
   font-size: 16px;
 }
 
@@ -74,8 +89,9 @@ button {
   padding: 1rem;
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
   border-radius: 10px;
-  background: #e4c1f9;
+  background: var(--purple);
   width: fit-content;
+  color: var(--bg-color);
 }
 
 ul li {

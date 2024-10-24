@@ -16,6 +16,14 @@ const d = new Date();
 let day = weekday[d.getDay()];
 document.getElementById("day").innerHTML = day;
 
+//theme switcher
+let theme = document.getElementById("theme-switcher");
+
+theme.addEventListener("change", function (event) {
+  const selectTheme = event.target.value;
+  document.body.setAttribute("data-theme", selectTheme);
+});
+
 //Lav array (det skal være tomt fra starten)
 let taskArray = [];
 
