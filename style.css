@@ -65,6 +65,7 @@ button {
   padding: 0.7rem 1rem;
   border-radius: 25px;
   color: var(--text-color);
+  font-size: 16px;
 }
 
 .day_container {
