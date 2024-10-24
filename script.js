@@ -18,7 +18,6 @@ document.getElementById("day").innerHTML = day;
 
 //Lav array (det skal være tomt fra starten)
 let taskArray = [];
-let doneTaskArray = [];
 
 //Gem taskArray i localstorage
 if (taskArrayFromLocalstorage === null) {
@@ -32,7 +31,6 @@ init();
 
 function init() {
   updateTaskView();
-  //updateDoneTaskView();
 }
 
 //Ved klik af tilføj knappen tilføjes task til array
@@ -88,16 +86,14 @@ function updateTaskView() {
 function markAsDone(event) {
   let completedTask = event.target.innerText;
   let taskId = event.target.dataset.id;
-  // let completedTask = taskArray[taskId];
   let li = document.createElement("li");
 
-  // doneTaskArray.push(completedTask);
   li.innerHTML = completedTask;
   li.classList.add("strike"); //tilføj klassen strike til task, når den er markeret som done
   console.log("task er done");
 
-  li.addEventListener("click", markAsNotDone); // Tilføj eventlistener til task for at kunne flytte den tilbage til to-do-listen
   doneList.appendChild(li); //Opret et nyt <li> element i done-listen
+  li.addEventListener("click", markAsNotDone); // Tilføj eventlistener til task for at kunne flytte den tilbage til to-do-listen
   taskArray.splice(taskId, 1); //Fjern opgaven fra taskArray
 
   updateTaskView(); // Opdater to-do listen
